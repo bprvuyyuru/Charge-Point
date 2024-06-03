@@ -1,0 +1,3 @@
+{
+    "connectionString": "mongodb+srv://mern:mern@cluster001.d16we.mongodb.net/ChargePoint?retryWrites=true&w=majority&appName=Cluster001"
+}

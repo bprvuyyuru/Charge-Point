@@ -68,11 +68,14 @@ export const createUser = async (req, res) => {
 };
 
 export const getAllUsers = async (req, res) => {
-  const users = await User.find().sort({ firstName: 1 });
-  return res.json({
-    error: false,
-    users,
-  });
+  try {
+    const users = await User.find().sort({ firstName: 1 });
+    return res.status(200).json({
+      users,
+    });
+  } catch (error) {
+    return res.status(404).json({ message: error.message });
+  }
 };
 
 export default router;
